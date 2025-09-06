@@ -1,4 +1,4 @@
-package com.example.demomusic;
+package com.example.demomusic.configuration;
 
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
