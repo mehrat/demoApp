@@ -1,8 +1,12 @@
 package com.example.demomusic.models;
 
+import jakarta.validation.constraints.NotNull;
+
 public class CheckInModel {
 
+    @NotNull(message = "cardId can not be null")
     private String cardId;
+    @NotNull(message = "station can not be null")
     private String station;
 
     public CheckInModel(String cardId, String station) {

@@ -3,6 +3,7 @@ package com.example.demomusic.controller;
 import com.example.demomusic.models.CheckInModel;
 import com.example.demomusic.models.CheckOutModel;
 import com.example.demomusic.services.TrainService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +23,7 @@ public class TrainController {
     }
 
     @PostMapping("/checkIn")
-    public ResponseEntity<String> checkIn(@RequestBody CheckInModel checkIn) {
+    public ResponseEntity<String> checkIn(@Valid @RequestBody CheckInModel checkIn) {
 
         trainService.checkIn(checkIn.getCardId(), checkIn.getStation(), Instant.now());
         return ResponseEntity.ok(
